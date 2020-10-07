@@ -31,4 +31,12 @@ class AuthServiceTests: XCTestCase {
 
         XCTAssertThrowsError(try AuthenticationService.shared.login("lampPlant"))
     }
+    
+    func testVerifyNewUser() throws {
+        do {
+            try AuthenticationService.shared.verifyNewUser("test")
+        } catch {
+            print(error)
+        }
+    }
 }

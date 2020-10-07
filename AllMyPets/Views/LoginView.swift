@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State var name: String = ""
     @State var isLoggedIn = false
-    @State var showAlert = false
+    @State var isShowingAlert = false
     
     var body: some View {
         NavigationView {
@@ -28,18 +28,14 @@ struct LoginView: View {
                         try AuthenticationService.shared.login(name)
                         isLoggedIn = true
                     } catch {
-                        showAlert = true
+                        isShowingAlert = true
                     }
                 },
                        label: {
                         Text("Sign In")
                             .font(.largeTitle)
                 })
-                .alert(isPresented: $showAlert, content: {
-                    Alert(title: Text("User Lookup"),
-                          message: Text("No user found for \(name)"),
-                          dismissButton: .default(Text("Ok")))
-                })
+
                 NavigationLink(
                     destination: NewUserView(),
                     label: {
@@ -48,6 +44,11 @@ struct LoginView: View {
                 Spacer()
             }
         }
+        .alert(isPresented: $isShowingAlert, content: {
+            Alert(title: Text("User Lookup"),
+                  message: Text("No user found for \(name)"),
+                  dismissButton: .default(Text("Ok")))
+        })
     }
 }
 
