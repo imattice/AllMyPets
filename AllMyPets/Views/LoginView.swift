@@ -11,6 +11,7 @@ struct LoginView: View {
     @State var name: String = ""
     @State var isLoggedIn = false
     @State var isShowingAlert = false
+    @State var isShowingNewUserView = false
     
     var body: some View {
         NavigationView {
@@ -35,9 +36,9 @@ struct LoginView: View {
                         Text("Sign In")
                             .font(.largeTitle)
                 })
-
                 NavigationLink(
-                    destination: NewUserView(),
+                    destination: NewUserView(isShowingNewUserView: $isShowingNewUserView),
+                    isActive: $isShowingNewUserView,
                     label: {
                         Text("Create Account")
                     })
