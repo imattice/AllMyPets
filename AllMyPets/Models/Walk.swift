@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Walk {
+struct Walk: Hashable {
     let startLocation: String
     let destinationLocation: String
     let time: String

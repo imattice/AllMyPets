@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var name: String = ""
+    @State var name: String = "blueberryRush"
     @State var isLoggedIn = false
     @State var isShowingAlert = false
     @State var isShowingNewUserView = false
@@ -20,7 +20,8 @@ struct LoginView: View {
                 TextField("Username", text: $name)
                     .padding()
                 NavigationLink(
-                    destination: PetListView(),
+                    destination: PetListView()
+                        .navigationBarBackButtonHidden(true),
                     isActive: $isLoggedIn,
                     label: { EmptyView()})
                 

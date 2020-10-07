@@ -13,4 +13,11 @@ struct User {
     let pets: [Pet]
     
     static var current: User? = nil
+    
+//    init(id: UUID?, name: String, pets: [Pet] = [Pet]()) {
+//        self.name   = name
+//        self.pets   = pets
+//        self.id     = id ?? UUID()
+//    }
+
 }
