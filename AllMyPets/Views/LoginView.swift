@@ -9,31 +9,45 @@ import SwiftUI
 
 struct LoginView: View {
     @State var name: String = ""
+    @State var isLoggedIn = false
+    @State var showAlert = false
     
     var body: some View {
-        VStack {
-            Spacer()
-            TextField("Name", text: $name)
-                .padding()
-            Button( action: {
-                print("logging in")
-            },
-            label: {
-                Text("Sign In")
-                    .font(.largeTitle)
-            })
-            .padding(.bottom)
-
-            
-            Button( action: {
-                print("logging in")
-            },
-            label: {
-                Text("Create Account")
-            })
-            Spacer()
-
-    }
+        NavigationView {
+            VStack {
+                Spacer()
+                TextField("Username", text: $name)
+                    .padding()
+                NavigationLink(
+                    destination: PetListView(),
+                    isActive: $isLoggedIn,
+                    label: { EmptyView()})
+                
+                Button(action: {
+                    do {
+                        try AuthenticationService.shared.login(name)
+                        isLoggedIn = true
+                    } catch {
+                        showAlert = true
+                    }
+                },
+                       label: {
+                        Text("Sign In")
+                            .font(.largeTitle)
+                })
+                .alert(isPresented: $showAlert, content: {
+                    Alert(title: Text("User Lookup"),
+                          message: Text("No user found for \(name)"),
+                          dismissButton: .default(Text("Ok")))
+                })
+                NavigationLink(
+                    destination: NewUserView(),
+                    label: {
+                        Text("Create Account")
+                    })
+                Spacer()
+            }
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  AllMyPetsTests.swift
+//  AuthServiceTests.swift
 //  AllMyPetsTests
 //
 //  Created by Ike Mattice on 10/6/20.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import AllMyPets
 
-class AuthenticationServiceTests: XCTestCase {
+class AuthServiceTests: XCTestCase {
     var authService: AuthenticationService? = AuthenticationService.shared
 
     override func setUpWithError() throws {
@@ -20,15 +20,15 @@ class AuthenticationServiceTests: XCTestCase {
     }
 
     func testLogin() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        XCTAssertNil(User.current)
+        
+        try? AuthenticationService.shared.login("blueberryRush")
+        XCTAssertNotNil(User.current)
+        XCTAssertTrue(User.current?.name == "blueberryRush")
+        
+        try? AuthenticationService.shared.login("cityOfPigeons")
+        XCTAssertTrue(User.current?.name == "cityOfPigeons")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssertThrowsError(try AuthenticationService.shared.login("lampPlant"))
     }
-
 }

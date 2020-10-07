@@ -13,7 +13,7 @@ struct NewUserView: View {
     var body: some View {
         VStack {
             Form {
-                TextField("Name", text: $name)
+                TextField("Username", text: $name)
             }
             Button(action: {
                 print("Finished User")

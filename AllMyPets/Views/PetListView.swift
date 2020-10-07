@@ -11,10 +11,15 @@ struct PetListView: View {
     var body: some View {
         VStack {
             List {
-                HStack {
-                    Image(systemName: "tortoise")
-                    Text("Tiptoe")
-                }
+                    NavigationLink(
+                        destination: WalksView(),
+                        label: {
+                            HStack {
+
+                            Image(systemName: "tortoise")
+                            Text("Tiptoe")
+                            }
+                        })
             }
         }
     }
