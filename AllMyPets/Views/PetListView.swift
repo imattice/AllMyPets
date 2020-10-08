@@ -15,7 +15,7 @@ struct PetListView: View {
             List {
                 ForEach(pets, id: \.self) { pet in
                     NavigationLink(
-                        destination: WalksView(),
+                        destination: WalksView(pet: pet),
                         label: {
                             PetView(pet: pet)
                         })

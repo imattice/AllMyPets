@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56AE086121BD8ACE6A7D59EE /* Pods_AllMyPetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE931FA2078CDEE69FA2FE14 /* Pods_AllMyPetsTests.framework */; };
+		81DC0025252E8D5B007F49F1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC0024252E8D5B007F49F1 /* Keys.swift */; };
 		81DCFF56252D843A007F49F1 /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCFF55252D843A007F49F1 /* AuthenticationServiceTests.swift */; };
 		81E55DA1252CF31200EB1E08 /* AllMyPetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55DA0252CF31200EB1E08 /* AllMyPetsApp.swift */; };
 		81E55DA3252CF31200EB1E08 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55DA2252CF31200EB1E08 /* LoginView.swift */; };
@@ -19,7 +20,6 @@
 		81E55DEE252CF43A00EB1E08 /* WalksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55DED252CF43A00EB1E08 /* WalksView.swift */; };
 		81E55DF3252CF44D00EB1E08 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55DF2252CF44D00EB1E08 /* SampleData.swift */; };
 		81E55DFB252CFBB500EB1E08 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55DFA252CFBB500EB1E08 /* AuthenticationService.swift */; };
-		81E55E1E252D007800EB1E08 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55E1D252D007800EB1E08 /* Keys.swift */; };
 		81E55E23252D028B00EB1E08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55E22252D028B00EB1E08 /* User.swift */; };
 		81E55E31252D113600EB1E08 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55E30252D113600EB1E08 /* Pet.swift */; };
 		81E55E36252D117A00EB1E08 /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E55E35252D117A00EB1E08 /* Walk.swift */; };
@@ -46,6 +46,7 @@
 /* Begin PBXFileReference section */
 		7B6AB64B4B24FC820ED9073F /* Pods_AllMyPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllMyPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81922E4EDA82C213D12626F6 /* Pods-AllMyPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllMyPets.release.xcconfig"; path = "Target Support Files/Pods-AllMyPets/Pods-AllMyPets.release.xcconfig"; sourceTree = "<group>"; };
+		81DC0024252E8D5B007F49F1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		81DCFF55252D843A007F49F1 /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTests.swift; sourceTree = "<group>"; };
 		81E55D9D252CF31200EB1E08 /* AllMyPets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllMyPets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E55DA0252CF31200EB1E08 /* AllMyPetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMyPetsApp.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		81E55DED252CF43A00EB1E08 /* WalksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalksView.swift; sourceTree = "<group>"; };
 		81E55DF2252CF44D00EB1E08 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		81E55DFA252CFBB500EB1E08 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
-		81E55E1D252D007800EB1E08 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		81E55E22252D028B00EB1E08 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		81E55E30252D113600EB1E08 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		81E55E35252D117A00EB1E08 /* Walk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walk.swift; sourceTree = "<group>"; };
@@ -196,10 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				81E55DFA252CFBB500EB1E08 /* AuthenticationService.swift */,
-				81E55E1D252D007800EB1E08 /* Keys.swift */,
 				81E55E22252D028B00EB1E08 /* User.swift */,
 				81E55E30252D113600EB1E08 /* Pet.swift */,
 				81E55E35252D117A00EB1E08 /* Walk.swift */,
+				81DC0024252E8D5B007F49F1 /* Keys.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,10 +411,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81E55DE9252CF43300EB1E08 /* PetListView.swift in Sources */,
-				81E55E1E252D007800EB1E08 /* Keys.swift in Sources */,
 				81E55E36252D117A00EB1E08 /* Walk.swift in Sources */,
 				81E55DF3252CF44D00EB1E08 /* SampleData.swift in Sources */,
 				81E55DA3252CF31200EB1E08 /* LoginView.swift in Sources */,
+				81DC0025252E8D5B007F49F1 /* Keys.swift in Sources */,
 				81E55DE4252CF42C00EB1E08 /* NewUserView.swift in Sources */,
 				81E55E31252D113600EB1E08 /* Pet.swift in Sources */,
 				81E55E23252D028B00EB1E08 /* User.swift in Sources */,
