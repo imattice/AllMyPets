@@ -46,7 +46,6 @@ struct AuthenticationService {
             throw AuthenticationError.loginError("no user found for \(name)") }
             
         User.current = newUser
-        print("current user is \(User.current?.name)")
     }
     
     func verifyNewUser(_ username: String, isVerified: @escaping (_ token: Bool) -> ()) throws {
