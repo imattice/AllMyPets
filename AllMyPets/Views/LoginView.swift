@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var name: String = "blueberryRush"
+    @State var name: String = User.randomSampleUsername
     @State var isLoggedIn = false
     @State var isShowingAlert = false
     @State var isShowingNewUserView = false
