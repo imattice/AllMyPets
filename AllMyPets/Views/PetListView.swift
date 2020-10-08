@@ -16,19 +16,37 @@ struct PetListView: View {
         VStack {
             List {
                 ForEach(pets, id: \.self) { pet in
-                    Button(action: {
-                        print("authenticating")
-                        selectedPet = pet
-                        isAuthorized = true
-                    }, label: {
-                        PetView(pet: pet, isAuthorized: isAuthorized)
-                    })
+                    NavigationLink(
+                        destination: WalksView(pet: selectedPet),
+                        isActive: $isAuthorized,
+                        label: { PetView(pet: pet,
+                                         isAuthorized: isAuthorized) })
+//                    Button(action: {
+//                        print("authenticating")
+//                        selectedPet = pet
+//                        isAuthorized = true
+//                    }, label: {
+//                        PetView(pet: pet, isAuthorized: isAuthorized)
+//                    })
                 }
             }
-            NavigationLink(
-                destination: WalksView(pet: selectedPet),
-                isActive: $isAuthorized,
-                label: { EmptyView() })
+//            NavigationLink(
+//                destination: WalksView(pet: selectedPet),
+//                isActive: $isAuthorized,
+//                label: { EmptyView() })
+            Button(action: {
+                print("authenticating")
+            }, label: {
+                VStack {
+                    Image(systemName: "lock.shield.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Text("Unlock Walks")
+                        .font(.body)
+                }
+                
+            })
+            .padding()
         }
         
         .navigationTitle("My Pets")
@@ -54,8 +72,7 @@ struct PetView: View {
             isAuthorized ?
                 Image(systemName: "lock.open") :
                 Image(systemName: "lock.fill")
-            Image(systemName: "chevron.right")
-            
+            //Image(systemName: "chevron.right")
         }
     }
 }
